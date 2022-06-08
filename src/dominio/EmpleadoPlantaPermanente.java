@@ -16,4 +16,14 @@ public class EmpleadoPlantaPermanente extends Empleado {
 	public Double getCalculoAntiguedad() {
 		return (Double) (getAntiguedad() * 100.00);
 	}
+
+	@Override
+	public Double getMonto() {
+		return super.getMonto() + getCalculoAntiguedad();
+	}
+
+	@Override
+	public Double getValorHora() {
+		return 300.00;
+	}
 }

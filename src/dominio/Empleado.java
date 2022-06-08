@@ -8,57 +8,47 @@ public class Empleado {
 	private Double valorHora = 0.00;
 	private Double salarioXHijo = 100.00;
 
-	public Double getMonto() {
-		//return getHorasTrabajadas() * getValorHora() + getPlusFamiliar();
-		return 0.0;
+	public void setHorasTrabajadas(Integer horas) {
+		this.horasTrabajadas = horas;
+
 	}
 
-	private Double getPlusFamiliar() {
-		/*Double plusFamiliar = this.getEsCasado() ? 100.00 : 0.00;
-		plusFamiliar += this.getCantidadHijos() * 200;
-
-		return plusFamiliar;*/
-		return 0.0;
-	}
-
-	public Integer getHorasTrabajadas() {
-		return this.horasTrabajadas;
-	}
-
-	public void setHorasTrabajadas(Integer horasTrabajadas) {
-		this.horasTrabajadas = horasTrabajadas;
-	}
-
-	public Boolean getEsCasado() {
-		return esCasado;
-	}
-
-	public void setEsCasado(Boolean esCasado) {
+	public void esCasado(Boolean esCasado) {
 		this.esCasado = esCasado;
+
 	}
 
-	public Integer getCantidadHijos() {
-		return cantidadHijos;
-	}
-
-	public void setCantidadHijos(Integer cantidadHijos) {
+	public void setHijos(Integer cantidadHijos) {
 		this.cantidadHijos = cantidadHijos;
+
+	}
+
+	public Double getMonto() {
+		return getHorasTrabajadas() * getValorHora() + getPlusFamiliar();
+	}
+
+	// ???
+	private Double getPlusFamiliar() {
+		Double plusFamiliar = this.esCasado() ? 100.00 : 0.00;
+		plusFamiliar += this.getHijos() * 200;
+
+		return plusFamiliar;
 	}
 
 	public Double getValorHora() {
-		return valorHora;
+		return this.valorHora;
 	}
 
-	public void setValorHora(Double valorHora) {
-		this.valorHora = valorHora;
+	private Integer getHorasTrabajadas() {
+		return this.horasTrabajadas;
 	}
 
-	public Double getSalarioXHijo() {
-		return salarioXHijo;
+	public Boolean esCasado() {
+		return esCasado;
 	}
 
-	public void setSalarioXHijo(Double salarioXHijo) {
-		this.salarioXHijo = salarioXHijo;
+	public Integer getHijos() {
+		return cantidadHijos;
 	}
 
 }
