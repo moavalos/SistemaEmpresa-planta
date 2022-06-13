@@ -28,7 +28,7 @@ public class Empleado {
 	}
 
 	// ???
-	private Double getPlusFamiliar() {
+	protected Double getPlusFamiliar() {
 		Double plusFamiliar = this.getEsCasado() ? 100.00 : 0.00;
 		plusFamiliar += this.getHijos() * 200;
 
@@ -39,7 +39,7 @@ public class Empleado {
 		return this.valorHora;
 	}
 
-	private Integer getHorasTrabajadas() {
+	protected Integer getHorasTrabajadas() {
 		return this.horasTrabajadas;
 	}
 
@@ -50,5 +50,6 @@ public class Empleado {
 	public Integer getHijos() {
 		return cantidadHijos;
 	}
+
 
 }

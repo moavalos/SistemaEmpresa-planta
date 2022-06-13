@@ -1,6 +1,6 @@
 package dominio;
 
-public class EmpleadoPlantaPermanente extends Empleado {
+public class EmpleadoPlantaPermanente extends Empleado implements SueldoTotal {
 
 	private Integer antiguedad;
 
@@ -25,5 +25,10 @@ public class EmpleadoPlantaPermanente extends Empleado {
 	@Override
 	public Double getValorHora() {
 		return 300.00;
+	}
+
+	@Override
+	public Double sueldoTotal() {
+		return (double) (getValorHora() * super.getHorasTrabajadas() + getAntiguedad() * getCalculoAntiguedad() + super.getPlusFamiliar());
 	}
 }

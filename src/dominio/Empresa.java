@@ -10,11 +10,11 @@ public class Empresa {
 	private String razonSocial;
 
 	public Empresa(Integer cuit, String razonSocial) {
-		//this.empleados = new ArrayList<Empleado>();
+		// this.empleados = new ArrayList<Empleado>();
 		this.cuit = cuit;
 		this.razonSocial = razonSocial;
 	}
-	
+
 	public String getRazonSocial() {
 		return razonSocial;
 	}
@@ -41,5 +41,24 @@ public class Empresa {
 		}
 
 		return total;
+	}
+
+	public Double sueldoTotalAPagarPorLaEmpresa() {
+		Double sueldoTotalAPagar = 0.0;
+		for (Empleado empleado : empleados) {
+			if (empleado instanceof EmpleadoPlantaPermanente) {
+				sueldoTotalAPagar += ((EmpleadoPlantaPermanente) empleado).sueldoTotal();
+			}
+
+			else if (empleado instanceof EmpleadoPlantaTemporaria) {
+				sueldoTotalAPagar += ((EmpleadoPlantaTemporaria) empleado).sueldoTotal();
+			}
+
+			else if (empleado instanceof Gerente) {
+				sueldoTotalAPagar += ((Gerente) empleado).sueldoTotal();
+			}
+		}
+
+		return sueldoTotalAPagar;
 	}
 }

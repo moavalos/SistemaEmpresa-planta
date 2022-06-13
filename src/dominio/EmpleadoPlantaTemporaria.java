@@ -7,4 +7,8 @@ public class EmpleadoPlantaTemporaria extends Empleado {
 		return 200.00;
 	}
 
+	public Double sueldoTotal() {
+		return (double) (getValorHora() * super.getHorasTrabajadas() + super.getPlusFamiliar()) ;
+	}
+
 }
