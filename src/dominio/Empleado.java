@@ -13,7 +13,7 @@ public class Empleado {
 
 	}
 
-	public void esCasado(Boolean esCasado) {
+	public void setEsCasado(Boolean esCasado) {
 		this.esCasado = esCasado;
 
 	}
@@ -29,7 +29,7 @@ public class Empleado {
 
 	// ???
 	private Double getPlusFamiliar() {
-		Double plusFamiliar = this.esCasado() ? 100.00 : 0.00;
+		Double plusFamiliar = this.getEsCasado() ? 100.00 : 0.00;
 		plusFamiliar += this.getHijos() * 200;
 
 		return plusFamiliar;
@@ -43,7 +43,7 @@ public class Empleado {
 		return this.horasTrabajadas;
 	}
 
-	public Boolean esCasado() {
+	public Boolean getEsCasado() {
 		return esCasado;
 	}
 

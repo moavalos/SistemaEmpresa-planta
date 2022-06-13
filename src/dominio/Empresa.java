@@ -5,15 +5,21 @@ import java.util.List;
 
 public class Empresa {
 
-	private String cuit;
+	private Integer cuit;
 	private List<Empleado> empleados = new ArrayList<Empleado>();
 	private String razonSocial;
 
-	/*public Empresa() {
-		this.empleados = new ArrayList<Empleado>();
-	}*/
+	public Empresa(Integer cuit, String razonSocial) {
+		//this.empleados = new ArrayList<Empleado>();
+		this.cuit = cuit;
+		this.razonSocial = razonSocial;
+	}
+	
+	public String getRazonSocial() {
+		return razonSocial;
+	}
 
-	public void setCuit(String cuit) {
+	public void setCuit(Integer cuit) {
 		this.cuit = cuit;
 
 	}
